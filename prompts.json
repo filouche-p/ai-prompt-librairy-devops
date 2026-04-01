@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Expliquer un concept technique",
+        "category": "Education",
+        "prompt": "Explique ce concept comme si j'avais 10 ans."
+    },
+    {
+        "title": "Créer un post LinkedIn",
+        "category": "Marketing",
+        "prompt": "Rédige un post LinkedIn pédagogique sur l'apprentissage du code."
+    }
+]
