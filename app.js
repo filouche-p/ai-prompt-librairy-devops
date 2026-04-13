@@ -62,7 +62,7 @@ async function loadPrompts(jsonPath="prompts.json") {
 }
 
 
-function addPropmt(data) {
+function addPrompt(data) {
     //! Need to check the entries
     //! Need to check that the title is not already taken
     loadPrompt(data['title'], data['category'], data['prompt']);
@@ -80,17 +80,17 @@ function deleteChild(parentId="prompt-container", classNameExeption="addedByUser
 }
 
 /* Intercept the form */
-const addPropmtForm = document.getElementById('addPropmt');
+const addPromptForm = document.getElementById('addPrompt');
 
-addPropmtForm.addEventListener('submit', async (event) => {
+addPromptForm.addEventListener('submit', async (event) => {
     //* Prevent reloading the entire page
     event.preventDefault();
 
-    const formData = new FormData(addPropmtForm)
+    const formData = new FormData(addPromptForm)
 
     try {
         const data = Object.fromEntries(formData.entries());
-        addPropmt(data);
+        addPrompt(data);
         
         const newEntry = document.getElementById('card-' + data['title']);
         if(newEntry) {
