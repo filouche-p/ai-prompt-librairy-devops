@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="./app.js"></script>
+    <title>Ai Prompt librairy devops</title>
+</head>
+<body>
+    <form method="post" id="addPrompt">
+        <div>
+            <div>
+                <label for="title">Titre :</label><br>
+                <input type="text" id="title" name="title"><br>
+            </div>
+
+            <div>
+                <label for="category">Catégorie :</label><br>
+                <input type="text" id="category" name="category"><br>
+            </div>
+
+            <div>
+                <label for="prompt">Prompt :</label><br>
+                <textarea type="textarea" id="prompt" name="prompt"></textarea>
+            </div>
+        </div>
+
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <form method="post" id="reloadJsonFile">
+        <label for="jsonPath">Chemin d'accès du fichier :</label><br>
+        <input type="text" id="jsonPath" name="jsonPath" placeholder="prompts.json"><br>
+        
+        <button type="submit">Recharger le fichier</button>
+    </form>
+
+    <div id="prompt-container">
+
+    </div>
+</body>
+</html>

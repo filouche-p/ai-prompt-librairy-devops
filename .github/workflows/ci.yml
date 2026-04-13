@@ -1,0 +1,43 @@
+name: CI/CD - AI Prompt Library
+
+on:
+    push:
+        branches: [ "main", "develop" ]
+    pull_request:
+        branches: [ "main", "develop" ]
+
+jobs:
+    lint-and-test:
+        name: Validation JSON et Linting
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout du code
+              uses: actions/checkout@v4
+
+            - name: Vérification de la syntaxe du prompts.json
+              run: |
+                  # Utilise jq pour vérifier le JSON
+                  jq empty prompts.json || (echo "Erreur de syntaxe dans prompts.json" && exit 1)
+
+            - name: Lint du Dockerfile
+              uses: hadolint/hadolint-action@v3.1.0
+              with:
+                  dockerfile: Dockerfile
+
+    docker-build:
+        name: Build Docker Image
+        runs-on: ubuntu-latest
+        needs: lint-and-test
+        steps:
+            - name: Checkout du code
+              uses: actions/checkout@v4
+
+            - name: Configuration de Docker Buildx
+              uses: docker/setup-buildx-action@v3
+
+            - name: Build de l'image Docker
+              uses: docker/build-push-action@v5
+              with:
+                  context: .
+                  push: false
+                  tags: ai-prompt-library:latest
