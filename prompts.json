@@ -1,12 +1,42 @@
 [
     {
-        "title": "Expliquer un concept technique",
-        "category": "Education",
-        "prompt": "Explique ce concept comme si j'avais 10 ans."
+        "title": "Créer un Dockerfile Node.js",
+        "category": "DevOps",
+        "prompt": "Crée un Dockerfile optimisé pour la production (multi-stage build) pour une application Node.js. Inclus des commentaires pour expliquer chaque étape."
     },
     {
-        "title": "Créer un post LinkedIn",
+        "title": "Expliquer un concept technique",
+        "category": "Apprentissage",
+        "prompt": "Explique le concept d'Intégration Continue (CI) et de Déploiement Continu (CD) comme si j'avais 10 ans, en utilisant une analogie simple avec une usine de jouets."
+    },
+    {
+        "title": "Rédiger un email de refus poli",
+        "category": "Communication",
+        "prompt": "Rédige un email professionnel et poli pour décliner une offre de partenariat commercial, en justifiant un manque de temps actuel tout en laissant la porte ouverte pour l'avenir."
+    },
+    {
+        "title": "Générer un post LinkedIn",
         "category": "Marketing",
-        "prompt": "Rédige un post LinkedIn pédagogique sur l'apprentissage du code."
+        "prompt": "Agis comme un expert en marketing digital. Écris un post LinkedIn engageant sur l'importance de l'automatisation des tests pour les développeurs, avec des emojis et des hashtags pertinents."
+    },
+    {
+        "title": "Générer des données de test",
+        "category": "Développement",
+        "prompt": "Génère un tableau au format JSON contenant 5 faux profils d'utilisateurs. Chaque profil doit avoir un 'id', un 'nom', une 'adresse_email' et un 'role' (admin ou user)."
+    },
+    {
+        "title": "Préparer un entretien technique",
+        "category": "Carrière",
+        "prompt": "Agis comme un recruteur technique ou Lead Dev. Pose-moi 3 questions d'entretien classiques pour un poste de développeur junior, et attends mes réponses pour me faire un retour."
+    },
+    {
+        "title": "Générer une expression régulière",
+        "category": "Développement",
+        "prompt": "Écris une expression régulière (Regex) en JavaScript qui permet de valider un numéro de téléphone français. Explique-moi brièvement comment elle fonctionne."
+    },
+    {
+        "title": "Améliorer un texte",
+        "category": "Rédaction",
+        "prompt": "Corrige les fautes d'orthographe de ce texte et réécris-le pour qu'il ait un ton plus soutenu et professionnel : [Insérer le texte ici]"
     }
 ]
