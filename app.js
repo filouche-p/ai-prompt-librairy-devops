@@ -120,7 +120,6 @@ function deleteChild(parentId="prompt-container", classNameExeption="addedByUser
     }
 }
 
-/* Intercept the form */
 const addPromptForm = document.getElementById('addPrompt');
 
 addPromptForm.addEventListener('submit', async (event) => {
@@ -143,24 +142,23 @@ addPromptForm.addEventListener('submit', async (event) => {
     }
 });
 
-const reloadJsonFile = document.getElementById('reloadJsonFile');
+// const reloadJsonFile = document.getElementById('reloadJsonFile');
 
-reloadJsonFile.addEventListener('submit', async (event) => {
-    event.preventDefault();
+// reloadJsonFile.addEventListener('submit', async (event) => {
+//     event.preventDefault();
 
-    const formData = new FormData(reloadJsonFile);
+//     const formData = new FormData(reloadJsonFile);
 
-    try {
-        const data = Object.fromEntries(formData.entries());
-        deleteChild(); //* Delete all child that aren't added by the user
-        loadPrompts(data['jsonPath'] || "prompts.json");
-    } catch (error) {
-        console.error("Erreur quand le formulaire de rechargement du fichier json à été soumis : " + error);
-    }
-});
+//     try {
+//         const data = Object.fromEntries(formData.entries());
+//         deleteChild(); //* Delete all child that aren't added by the user
+//         loadPrompts(data['jsonPath'] || "prompts.json");
+//     } catch (error) {
+//         console.error("Erreur quand le formulaire de rechargement du fichier json à été soumis : " + error);
+//     }
+// });
 
 
-/* Load propmt card in the body */
 const htmlJsonPath = document.getElementById('jsonPath');
 loadPrompts((htmlJsonPath && htmlJsonPath.value) || undefined);
 
