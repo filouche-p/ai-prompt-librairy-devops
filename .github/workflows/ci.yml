@@ -69,5 +69,10 @@ jobs:
                     sudo docker pull ghcr.io/${{ github.repository_owner }}/ai-prompt-library:latest
                     sudo docker stop prompt-library-app || true
                     sudo docker rm prompt-library-app || true
-                    sudo docker run -d --name prompt-library-app -p 443:80 ghcr.io/${{ github.repository_owner }}/ai-prompt-library:latest
+                    sudo docker run -d \
+                      --name prompt-library-app \
+                      -p 80:80 \
+                      -p 443:443 \
+                      -v /etc/letsencrypt:/etc/letsencrypt:ro \
+                      ghcr.io/${{ github.repository_owner }}/ai-prompt-library:latest
 

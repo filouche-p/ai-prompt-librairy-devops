@@ -3,3 +3,5 @@ Dockerfile
 .dockerignore
 ai-prompt-library-devops.md
 liste_commande.md
+.git
+.gitignore
