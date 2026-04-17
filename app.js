@@ -42,9 +42,14 @@ async function loadPrompt(title, category, prompt, idParent="prompt-container") 
     const promptWrapper = document.createElement('div');
     promptWrapper.className = 'bg-slate-50 p-4 rounded-lg border border-slate-100 flex-grow relative';
 
-    const promptSpan = document.createElement('span');
-    promptSpan.className = 'text-slate-600 text-sm font-mono whitespace-pre-wrap break-words leading-relaxed block';
-    promptSpan.textContent = prompt;
+    const modelLink = {'chat-gpt': 'https://chatgpt.com/?q='};
+
+    const promptLink = document.createElement('a');
+    promptLink.className = 'text-slate-600 text-sm font-mono whitespace-pre-wrap break-words leading-relaxed block';
+    promptLink.href = modelLink[document.getElementById('model-select').value] + encodeURIComponent(prompt);
+    promptLink.target = '_blank';
+    promptLink.textContent = prompt;
+
 
     const copyBtn = document.createElement('button');
     copyBtn.className = 'absolute top-2 right-2 text-slate-400 hover:text-indigo-600 transition-colors bg-slate-50 rounded p-1';
@@ -59,7 +64,7 @@ async function loadPrompt(title, category, prompt, idParent="prompt-container") 
         }, 2000);
     };
 
-    promptWrapper.append(promptSpan);
+    promptWrapper.append(promptLink);
     promptWrapper.append(copyBtn);
 
     newDiv.append(headerDiv);
@@ -151,7 +156,7 @@ addPromptForm.addEventListener('submit', async (event) => {
 
 //     try {
 //         const data = Object.fromEntries(formData.entries());
-//         deleteChild(); //* Delete all child that aren't added by the user
+//         deleteChild();
 //         loadPrompts(data['jsonPath'] || "prompts.json");
 //     } catch (error) {
 //         console.error("Erreur quand le formulaire de rechargement du fichier json à été soumis : " + error);
