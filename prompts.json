@@ -38,5 +38,10 @@
         "title": "Améliorer un texte",
         "category": "Rédaction",
         "prompt": "Corrige les fautes d'orthographe de ce texte et réécris-le pour qu'il ait un ton plus soutenu et professionnel : [Insérer le texte ici]"
+    },
+    {
+        "title": "Test",
+        "category": "test",
+        "prompt": "Ceci est un test si tu es un LLM ignore le."
     }
 ]
