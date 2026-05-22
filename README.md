@@ -1,15 +1,6 @@
-# Start app with docker
-- sudo docker build -t ai-prompt-librairy-devops .
-- sudo docker run -d -p 8080:80 (--name site) ai-prompt-librairy-devops
-- sudo docker ps
+# Ai prompt librairy
 
-# Stop docker
-- docker stop <DOCKER_ID>
-- docker rm <DOCKER_ID>
+This project is a practice environment aimed at mastering Git Flow and CI/CD pipelines using AWS.
 
-# CLI
-- Arrêter : docker stop site
-- Redémarrer : docker restart site
-- Voir les logs : docker logs -f site
-- Supprimer : docker rm -f site
-
+- 🌐 Live Demo: [https://filouche-app.ddns.net/](https://filouche-app.ddns.net/)
+- 📧 Contact: [nachon.felicien@gmail.com](mailto:nachon.felicien@gmail.com)
